@@ -1,11 +1,11 @@
-add_library( statismo-core ${statismo_LIB_TYPE}
+add_library( statismo-core
   ModelInfo.cxx
 )
 target_link_libraries( statismo-core ${HDF5_LIBRARIES} )
 
-generate_export_header( statismo-core
-  EXPORT_MACRO_NAME STATISMO_CORE_EXPORT
-)
+#generate_export_header( statismo-core
+#  EXPORT_MACRO_NAME STATISMO_CORE_EXPORT
+#)
 
 set_target_properties( statismo-core PROPERTIES
   DEBUG_POSTFIX "-d"
@@ -20,6 +20,6 @@ install( TARGETS statismo-core
   ARCHIVE DESTINATION ${INSTALL_LIB_DIR}
 )
 
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/statismo-core-export.h
-  DESTINATION ${INSTALL_INCLUDE_DIR}/statismo/core
-)
+#install( FILES ${CMAKE_CURRENT_BINARY_DIR}/statismo-core-export.h
+#  DESTINATION ${INSTALL_INCLUDE_DIR}/statismo/core
+#)

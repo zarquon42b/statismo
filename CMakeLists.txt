@@ -70,7 +70,7 @@ endforeach()
 
 include( CTest )
 
-include( GenerateExportHeader )
+#include( GenerateExportHeader )
 
 include( ModuleHeaderTest )
 

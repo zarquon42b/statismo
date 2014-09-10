@@ -47,6 +47,7 @@
 #include "vtkTransform.h"
 #include "vtkTransformPolyDataFilter.h"
 
+#include "statismo-VTK_exports.h"
 #include "vtkHelper.h"
 #include "CommonTypes.h"
 #include "Domain.h"
@@ -65,7 +66,7 @@
  *
  * See Representer for more details about representer classes
  */
-class vtkUnstructuredGridRepresenter  {
+class STATISMO_VTK_EXPORT vtkUnstructuredGridRepresenter  {
 public:
 
 	/// The type of the data set to be used

@@ -7,9 +7,9 @@ target_link_libraries( statismo-VTK
   ${VTK_LIBRARIES}
 )
 
-generate_export_header( statismo-VTK
-  EXPORT_MACRO_NAME STATISMO_VTK_EXPORT
-)
+#generate_export_header( statismo-VTK
+#  EXPORT_MACRO_NAME STATISMO_VTK_EXPORT
+#)
 
 set_target_properties( statismo-VTK PROPERTIES
   DEBUG_POSTFIX "-d"
@@ -24,6 +24,6 @@ install( TARGETS statismo-VTK
   ARCHIVE DESTINATION ${INSTALL_LIB_DIR}
 )
 
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/statismo-VTK-export.h
-DESTINATION ${INSTALL_INCLUDE_DIR}/statismo/VTK
-)
+#install( FILES ${CMAKE_CURRENT_BINARY_DIR}/statismo-VTK-export.h
+#DESTINATION ${INSTALL_INCLUDE_DIR}/statismo/VTK
+#)

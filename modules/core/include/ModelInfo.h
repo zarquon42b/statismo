@@ -42,14 +42,40 @@
 
 #include "H5Cpp.h"
 #include "CommonTypes.h"
+#include "statismo-core_exports.h"
 #include <memory>
 #include <ctime>
+
+#ifdef _WIN32
+# ifndef STATISMO_CORE_STATIC_DEFINE
+	/* See: http://support.microsoft.com/default.aspx?scid=KB;EN-US;168958 */
+
+	/* Not sure which declarations are exactly needed to fix the following:
+	c:\statismo-superbuild\install\include\H5Exception.h(89): warning C4251: 'H5::Exception::detail_message' : class 'std::basic_string<_Elem,_Traits,_Alloc>' needs to have dll-interface to be used by clients of class 'H5::Exception'
+	c:\statismo-superbuild\install\include\H5Exception.h(90): warning C4251: 'H5::Exception::func_name' : class 'std::basic_string<_Elem,_Traits,_Alloc>' needs to have dll-interface to be used by clients of class 'H5::Exception'
+	j:\workspace\modules\core\include\ModelInfo.h(119): warning C4251: 'statismo::ModelInfo::m_scores' : class 'Eigen::Matrix<_Scalar,_Rows,_Cols,_Options>' needs to have dll-interface to be used by clients of class 'statismo::ModelInfo'
+	j:\workspace\modules\core\include\ModelInfo.h(120): warning C4251: 'statismo::ModelInfo::m_builderInfo' : class 'std::vector<_Ty>' needs to have dll-interface to be used by clients of class 'statismo::ModelInfo'
+	j:\workspace\modules\core\include\ModelInfo.h(185): warning C4251: 'statismo::BuilderInfo::m_modelBuilderName' : class 'std::basic_string<_Elem,_Traits,_Alloc>' needs to have dll-interface to be used by clients of class 'statismo::BuilderInfo'
+	j:\workspace\modules\core\include\ModelInfo.h(186): warning C4251: 'statismo::BuilderInfo::m_buildtime' : class 'std::basic_string<_Elem,_Traits,_Alloc>' needs to have dll-interface to be used by clients of class 'statismo::BuilderInfo'
+	j:\workspace\modules\core\include\ModelInfo.h(187): warning C4251: 'statismo::BuilderInfo::m_dataInfo' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'statismo::BuilderInfo'
+	j:\workspace\modules\core\include\ModelInfo.h(188): warning C4251: 'statismo::BuilderInfo::m_parameterInfo' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'statismo::BuilderInfo'
+	*/
+
+	/*STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT Eigen::Matrix<_Scalar,_Rows,_Cols,_Options>;
+	STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT std::vector<BuilderInfo>;
+	STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT ;
+	STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT ;
+	STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT ;
+	STATISMO_CORE_EXPIMP_TEMPLATE template class STATISMO_CORE_EXPORT ;
+	*/
+# endif
+#endif
 
 namespace statismo {
 
 
 
-class BuilderInfo; // forward declaration
+class STATISMO_CORE_EXPORT BuilderInfo; // forward declaration
 
 /**
  * \brief stores meta information about the model, such as e.g. the name (uri) of the datasets used to build the models, or specific parameters of the modelBuilders.
@@ -58,7 +84,7 @@ class BuilderInfo; // forward declaration
  * If n  model builders had been used in succession to create a model, there will be a list of n builder objects.
  *
  */
-class ModelInfo {
+class STATISMO_CORE_EXPORT ModelInfo {
 public:
 
 	typedef std::vector<BuilderInfo> BuilderInfoList;
@@ -122,7 +148,7 @@ private:
 /**
  * \brief Holds information about the data and the parameters used by a specific modelbuilder
  */
-class BuilderInfo {
+class STATISMO_CORE_EXPORT BuilderInfo {
 
 	friend class ModelInfo;
 
