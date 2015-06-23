@@ -1,3 +1,9 @@
+statismo (0.11.0precise4) precise; urgency=medium
+
+  * use vtk6-backport 
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Tue, 23 Jun 2015 09:21:43 +0200
+
 statismo (0.11.0) UNRELEASED; urgency=medium
 
   * new upstream release
