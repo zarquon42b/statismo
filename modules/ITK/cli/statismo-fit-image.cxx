@@ -32,12 +32,11 @@
  */
 
 #include <boost/program_options.hpp>
-
+#include <itkInterpolatingStatisticalDeformationModelTransform.h>
 #include <itkCommand.h>
 #include <itkCompositeTransform.h>
 #include <itkImageFileReader.h>
 #include <itkImageRegistrationMethod.h>
-#include <itkInterpolatingStatisticalDeformationModelTransform.h>
 #include <itkLBFGSOptimizer.h>
 #include <itkLinearInterpolateImageFunction.h>
 #include <itkNormalizedCorrelationImageToImageMetric.h>

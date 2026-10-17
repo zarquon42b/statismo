@@ -51,7 +51,7 @@
 #include "Config.h"
 #include "Domain.h"
 #include "Exceptions.h"
-
+#include <Eigen/Core>
 namespace statismo {
 
 const double PI	=	3.14159265358979323846;
@@ -130,7 +130,7 @@ template <> inline unsigned GetDataTypeId<double>() {
 // If we want to store a vector in a boost map, boost requires this function to be present.
 // We define it here once and for all.
 // Because of the way boost looksup the values, it needs to be defined in the namespace Eigen
-namespace Eigen {
+/*namespace Eigen {
 inline size_t hash_value(const statismo::VectorType& v) {
 
     size_t value = 0;
@@ -139,7 +139,7 @@ inline size_t hash_value(const statismo::VectorType& v) {
     }
     return value;
 }
-}
+}*/
 
 #endif
 

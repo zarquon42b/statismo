@@ -32,7 +32,7 @@
  */
 
 #include <boost/program_options.hpp>
-
+#include <itkReducedVarianceModelBuilder.h>
 #include <itkBoundingBox.h>
 #include <itkCompositeTransform.h>
 #include <itkSignedMaurerDistanceMapImageFilter.h>
@@ -42,7 +42,6 @@
 #include <itkPointSetToImageFilter.h>
 #include <itkPointSetToImageRegistrationMethod.h>
 #include <itkPointsLocator.h>
-#include <itkReducedVarianceModelBuilder.h>
 #include <itkStandardMeshRepresenter.h>
 #include <itkStatismoIO.h>
 #include <itkStatisticalModel.h>

@@ -71,14 +71,14 @@ struct RepresenterTraits<itk::Mesh<float, 3u> > {
 namespace itk {
 
 // helper function to compute the hash value of an itk point (needed by unorderd_map)
-template <typename PointType>
+/*template <typename PointType>
 size_t hash_value(const PointType& pt) {
     size_t hash_val = 0;
     for (unsigned i = 0; i < pt.GetPointDimension(); i++) {
         boost::hash_combine( hash_val, pt[i] );
     }
     return hash_val;
-}
+    }*/
 
 
 /**

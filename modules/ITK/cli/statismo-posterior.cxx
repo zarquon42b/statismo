@@ -33,12 +33,12 @@
 
 #include <boost/algorithm/string.hpp>
 #include <boost/program_options.hpp>
+#include <itkStandardImageRepresenter.h>
 
 #include <itkCompositeTransform.h>
 #include <itkImage.h>
 #include <itkMesh.h>
 #include <itkPointsLocator.h>
-#include <itkStandardImageRepresenter.h>
 #include <itkStandardMeshRepresenter.h>
 #include <itkStatismoIO.h>
 #include <itkStatisticalModel.h>
