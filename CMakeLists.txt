@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.10)
+cmake_minimum_required(VERSION 3.10)
 project(statismo)
 
 if( POLICY CMP0042 )
@@ -87,7 +87,7 @@ if( WIN32 )
   set( Boost_USE_STATIC_LIBS ON )
 endif()
 
-set( REQUIRED_BOOST_COMPONENTS thread system date_time filesystem )
+set( REQUIRED_BOOST_COMPONENTS thread date_time filesystem )
 
 option( BUILD_CLI_TOOLS "Build command-line tools" ON )
 #make the option to build the cli documentation available if and only if the cli tools will be built
@@ -112,7 +112,7 @@ endif()
 
 find_package( Boost 1.50 COMPONENTS ${REQUIRED_BOOST_COMPONENTS} REQUIRED )
 include_directories( ${Boost_INCLUDE_DIRS} )
-
+message("${Boost_LIBRARIES}")
 link_directories( ${Boost_LIBRARY_DIRS} )
 add_definitions( -DBOOST_THREAD_VERSION=3 -DBOOST_FILESYSTEM_VERSION=3 )
 
@@ -150,7 +150,11 @@ if( ${VTK_SUPPORT} MATCHES "ON" )
   find_package( VTK REQUIRED PATHS ${INSTALL_DEPENDENCIES_DIR})
   include( ${VTK_USE_FILE} )
 endif()
-
+find_package( Boost 1.50 COMPONENTS ${REQUIRED_BOOST_COMPONENTS} REQUIRED )
+include_directories( ${Boost_INCLUDE_DIRS} )
+message("${Boost_LIBRARIES}")
+link_directories( ${Boost_LIBRARY_DIRS} )
+add_definitions( -DBOOST_THREAD_VERSION=3 -DBOOST_FILESYSTEM_VERSION=3 )
 option( BUILD_EXAMPLES "Build examples" ON )
 
 
@@ -245,3 +249,4 @@ install( EXPORT statismoTargets
 install( FILES ReadMe.md LICENSE
   DESTINATION ${INSTALL_DOC_DIR}
 )
+

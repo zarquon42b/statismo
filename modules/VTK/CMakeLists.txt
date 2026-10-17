@@ -5,21 +5,21 @@ include_directories( BEFORE
 
 if(VTK_MAJOR_VERSION GREATER 5)
   set( required_vtk_modules
-    vtkCommonComputationalGeometry
-    vtkCommonCore
-    vtkCommonDataModel
-    vtkCommonExecutionModel
-    vtkCommonMath
-    vtkCommonMisc
-    vtkCommonSystem
-    vtkCommonTransforms
-    vtkFiltersCore
-    vtkFiltersGeneral
-    vtkIOCore
-    vtkIOGeometry
-    vtkIOLegacy
-    vtkIOXML
-    vtkIOXMLParser
+    CommonComputationalGeometry
+    CommonCore
+    CommonDataModel
+    CommonExecutionModel
+    CommonMath
+    CommonMisc
+    CommonSystem
+    CommonTransforms
+    FiltersCore
+    FiltersGeneral
+    IOCore
+    IOGeometry
+    IOLegacy
+    IOXML
+    IOXMLParser
     )
   if(TARGET vtkFiltersParallelDIY2)
     list(APPEND required_vtk_modules vtkFiltersParallelDIY2)
