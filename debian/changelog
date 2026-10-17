@@ -1,3 +1,16 @@
+statismo (0.11.1-resolute1) resolute; urgency=medium
+
+  * full release 
+
+ -- schlager <zarquon42@gmail.com>  Sat, 17 Oct 2026 19:10:31 +0200
+
+statismo (0.11.1-resolute0) resolute; urgency=medium
+
+   * Resolute Raccoon release
+
+ -- schlager <zarquon42@gmail.com>  Wed, 17 Jun 2026 12:33:03 +0200
+
+
 statismo (0.11.1-noble0) noble; urgency=medium
 
   * Noble Numbat release
